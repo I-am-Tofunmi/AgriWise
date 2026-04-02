@@ -106,13 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Logout pop-up confirmation
-  const logoutBtn = document.querySelector('a[aria-label="Logout"]');
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', (e) => {
+  const logoutTriggers = document.querySelectorAll('.logout-trigger');
+  logoutTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
       e.preventDefault();
       if (confirm('Are you sure you want to log out?')) {
         window.location.href = 'index.html';
       }
     });
-  }
+  });
 });

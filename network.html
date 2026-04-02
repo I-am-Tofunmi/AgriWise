@@ -25,8 +25,8 @@
       <div class="container navbar-container">
         <a href="index.html" class="logo">
           <i
-            class="fa-solid fa-clover"
-            style="color: var(--primary-color); font-size: 28px"
+            class="fa-solid fa-clover clover-icon"
+            style="color: var(--primary-color)"
           ></i>
           <span>AgriWise</span>
         </a>
@@ -35,7 +35,8 @@
           <li><a href="upload.html">Crops</a></li>
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="#">Marketplace</a></li>
-          <li><a href="network.html">Community</a></li>
+          <li><a href="network.html" class="active">Community</a></li>
+          <li class="mobile-only"><a href="index.html" class="logout-trigger">Log Out</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -61,14 +62,10 @@
           </div>
           <a
             href="index.html"
-            class="icon-btn"
+            class="icon-btn logout-btn-desktop logout-trigger"
             aria-label="Logout"
             title="Logout"
-            style="
-              color: var(--text-secondary);
-              margin-left: 0.5rem;
-              font-size: 1.2rem;
-            "
+            style="color: var(--text-secondary); margin-left: 0.5rem; font-size: 1.2rem;"
           >
             <i class="fa-solid fa-right-from-bracket"></i>
           </a>
@@ -184,7 +181,7 @@
                   Experienced farmhand specializing in maize and cocoa
                   cultivation. Available for seasonal work.
                 </p>
-                <button class="btn btn-light-green">View Profile</button>
+                <button class="btn btn-light-green btn-sm-profile">View Profile</button>
               </div>
             </div>
 
@@ -203,7 +200,7 @@
                   Supplier of high-quality seeds, fertilizers, and pesticides.
                   Offers delivery within the Ashanti region.
                 </p>
-                <button class="btn btn-light-green">View Profile</button>
+                <button class="btn btn-light-green btn-sm-profile">View Profile</button>
               </div>
             </div>
 
@@ -222,7 +219,7 @@
                   International buyer of cocoa and coffee beans. Offers
                   competitive pricing and long-term contracts.
                 </p>
-                <button class="btn btn-light-green">View Profile</button>
+                <button class="btn btn-light-green btn-sm-profile">View Profile</button>
               </div>
             </div>
 
@@ -238,7 +235,7 @@
                   Skilled in vegetable farming and irrigation techniques.
                   Available for short-term projects.
                 </p>
-                <button class="btn btn-light-green">View Profile</button>
+                <button class="btn btn-light-green btn-sm-profile">View Profile</button>
               </div>
             </div>
 
@@ -257,7 +254,7 @@
                   Provides innovative farming technology and equipment rentals.
                   Specializes in precision agriculture.
                 </p>
-                <button class="btn btn-light-green">View Profile</button>
+                <button class="btn btn-light-green btn-sm-profile">View Profile</button>
               </div>
             </div>
           </div>

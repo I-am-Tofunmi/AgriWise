@@ -1,86 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Crop Image - AgriWise</title>
+    <meta
+      name="description"
+      content="Upload an image of your crop for instant AI-powered health analysis."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="upload.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload Crop Image - AgriWise</title>
-  <meta name="description" content="Upload an image of your crop for instant AI-powered health analysis.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="upload.css">
-</head>
-
-<body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container navbar-container">
-      <a href="index.html" class="logo">
-        <i class="fa-solid fa-clover" style="color: var(--primary-color); font-size: 28px;"></i>
-        <span>AgriWise</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="upload.html" class="active">Crops</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="#">Marketplace</a></li>
-        <li><a href="network.html">Community</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <div class="avatar-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
-            alt="User Avatar" class="avatar">
-        </div>
-        <a href="index.html" class="icon-btn" aria-label="Logout" title="Logout" style="color: var(--text-secondary); margin-left: 0.5rem; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: color 0.2s; background: none; border: none; cursor: pointer;">
-          <i class="fa-solid fa-right-from-bracket"></i>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="index.html" class="logo">
+          <i
+            class="fa-solid fa-clover clover-icon"
+            style="color: var(--primary-color)"
+          ></i>
+          <span>AgriWise</span>
         </a>
-        <button class="mobile-menu-btn" aria-label="Toggle Menu">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Upload Content -->
-  <main class="upload-main fade-in">
-    <div class="container">
-      <div class="upload-wrapper">
-        <div class="upload-header">
-          <h1>Upload Crop Image</h1>
-          <p>Get an instant AI-powered analysis of your crop's health. Clear, well-lit images provide the best results.
-          </p>
+        <ul class="nav-links">
+          <li><a href="upload.html" class="active">Crops</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="network.html">Community</a></li>
+          <li class="mobile-only"><a href="index.html" class="logout-trigger">Log Out</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="avatar-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+              alt="User Avatar"
+              class="avatar"
+            />
+          </div>
+          <a
+            href="index.html"
+            class="icon-btn logout-btn-desktop logout-trigger"
+            aria-label="Logout"
+            title="Logout"
+            style="color: var(--text-secondary); margin-left: 0.5rem; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: color 0.2s; background: none; border: none; cursor: pointer;"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+          <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
+      </div>
+    </nav>
 
-        <div class="upload-card">
-          <div class="upload-zone" id="dropZone">
-            <input type="file" id="fileInput" class="file-input" accept=".png, .jpg, .jpeg">
-            <div class="upload-icon">
-              <!-- Cloud upload icon -->
-              <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="2" fill="none">
-                <path d="M12 12v9"></path>
-                <path d="m16 16-4-4-4 4"></path>
-                <path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
-              </svg>
-            </div>
-            <div class="upload-text">
-              <span class="click-text">Click to upload</span> or drag and drop
-            </div>
-            <div class="upload-hint">PNG, JPG, or JPEG (MAX. 5MB)</div>
+    <!-- Upload Content -->
+    <main class="upload-main fade-in">
+      <div class="container">
+        <div class="upload-wrapper">
+          <div class="upload-header">
+            <h1>Upload Crop Image</h1>
+            <p>
+              Get an instant AI-powered analysis of your crop's health. Clear,
+              well-lit images provide the best results.
+            </p>
           </div>
 
-          <button class="btn btn-primary btn-block" id="analyzeBtn" disabled>Analyze Image</button>
+          <div class="upload-card">
+            <div class="upload-zone" id="dropZone">
+              <input
+                type="file"
+                id="fileInput"
+                class="file-input"
+                accept=".png, .jpg, .jpeg"
+              />
+              <div class="upload-icon">
+                <!-- Cloud upload icon -->
+                <svg
+                  viewBox="0 0 24 24"
+                  width="64"
+                  height="64"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                >
+                  <path d="M12 12v9"></path>
+                  <path d="m16 16-4-4-4 4"></path>
+                  <path
+                    d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+                  ></path>
+                </svg>
+              </div>
+              <div class="upload-text">
+                <span class="click-text">Click to upload</span> or drag and drop
+              </div>
+              <div class="upload-hint">PNG, JPG, or JPEG (MAX. 5MB)</div>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="analyzeBtn" disabled>
+              Analyze Image
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <script src="upload.js"></script>
-</body>
-
+    <script src="upload.js"></script>
+  </body>
 </html>

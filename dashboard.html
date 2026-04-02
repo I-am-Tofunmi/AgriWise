@@ -25,8 +25,8 @@
       <div class="container navbar-container">
         <a href="index.html" class="logo">
           <i
-            class="fa-solid fa-clover"
-            style="color: var(--primary-color); font-size: 28px"
+            class="fa-solid fa-clover clover-icon"
+            style="color: var(--primary-color)"
           ></i>
           <span>AgriWise</span>
         </a>
@@ -36,6 +36,7 @@
           <li><a href="dashboard.html" class="active">Dashboard</a></li>
           <li><a href="#">Marketplace</a></li>
           <li><a href="network.html">Community</a></li>
+          <li class="mobile-only"><a href="index.html" class="logout-trigger">Log Out</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -62,14 +63,10 @@
           </div>
           <a
             href="index.html"
-            class="icon-btn"
+            class="icon-btn logout-btn-desktop logout-trigger"
             aria-label="Logout"
             title="Logout"
-            style="
-              color: var(--text-secondary);
-              margin-left: 0.5rem;
-              font-size: 1.2rem;
-            "
+            style="color: var(--text-secondary); margin-left: 0.5rem; font-size: 1.2rem;"
           >
             <i class="fa-solid fa-right-from-bracket"></i>
           </a>

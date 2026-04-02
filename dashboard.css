@@ -1,5 +1,3 @@
-/* dashboard.css */
-
 :root {
   --primary-color: #3bca28;
   --bg-color: #f4f6f4;
@@ -46,6 +44,12 @@ ul {
   padding: 0 1.5rem;
 }
 
+@media (max-width: 350px) {
+  .container {
+    padding: 0 0.8rem;
+  }
+}
+
 /* Navbar */
 .navbar {
   min-height: var(--nav-height);
@@ -62,7 +66,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   flex-wrap: wrap;
 }
 
@@ -75,11 +79,20 @@ ul {
   color: var(--text-primary);
 }
 
-.logo svg {
+.logo .clover-icon {
   color: var(--primary-color);
   width: 28px;
   height: 28px;
-  fill: var(--primary-color);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 350px) {
+  .logo span {
+    display: none;
+  }
 }
 
 .nav-links {
@@ -101,7 +114,13 @@ ul {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .nav-actions {
+    gap: 0.5rem;
+  }
 }
 
 .icon-btn {
@@ -383,5 +402,50 @@ ul {
 
   .dashboard-header h1 {
     font-size: 1.875rem;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .nav-links .logout-trigger {
+    color: #e74c3c;
+    font-weight: 600;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 350px) {
+  .dashboard-header h1 {
+    font-size: 1.4rem;
+  }
+  .dashboard-header p {
+    font-size: 0.85rem;
+  }
+  .column-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .card-header {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  .icon-box {
+    width: 36px;
+    height: 36px;
+  }
+  .icon-box svg {
+    width: 20px;
+    height: 20px;
+  }
+  .header-info h3 {
+    font-size: 1rem;
+  }
+  .header-info p {
+    font-size: 0.85rem;
   }
 }

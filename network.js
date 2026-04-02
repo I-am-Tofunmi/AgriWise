@@ -1,8 +1,20 @@
-// network.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
+  const searchInput = document.querySelector(".search-input");
+
+  // Simplify search placeholder on small screens
+  const updateSearchPlaceholder = () => {
+    if (searchInput) {
+      if (window.innerWidth <= 350) {
+        searchInput.placeholder = "Search network...";
+      } else {
+        searchInput.placeholder = "Search by name, specialty, or location...";
+      }
+    }
+  };
+
+  updateSearchPlaceholder();
 
   // Mobile menu toggle
   if (mobileMenuBtn && navLinks) {
@@ -53,13 +65,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Logout pop-up confirmation
-  const logoutBtn = document.querySelector('a[aria-label="Logout"]');
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", (e) => {
+  const logoutTriggers = document.querySelectorAll(".logout-trigger");
+  logoutTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
       e.preventDefault();
       if (confirm("Are you sure you want to log out?")) {
         window.location.href = "index.html";
       }
     });
-  }
+  });
+
+  // Handle resize for search placeholder
+  window.addEventListener("resize", () => {
+    updateSearchPlaceholder();
+  });
 });

@@ -1,5 +1,3 @@
-// register.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const registerForm = document.getElementById("registerForm");
   const submitBtn = registerForm.querySelector('button[type="submit"]');

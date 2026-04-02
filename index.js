@@ -1,13 +1,9 @@
-// index.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
 
-  // Simple mobile menu toggle
   if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener("click", () => {
-      // For a pure vanilla approach without extra classes, we can just toggle display
       if (navLinks.style.display === "flex") {
         navLinks.style.display = "none";
       } else {

@@ -1,5 +1,3 @@
-/* network.css */
-
 :root {
   --primary-color: #3bca28;
   --primary-hover: #2daa1c;
@@ -48,6 +46,18 @@ ul {
   padding: 0 1.5rem;
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
 /* Navbar */
 .navbar {
   min-height: var(--nav-height);
@@ -64,7 +74,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   flex-wrap: wrap;
 }
 
@@ -77,11 +87,20 @@ ul {
   color: var(--text-primary);
 }
 
-.logo svg {
+.logo .clover-icon {
   color: var(--primary-color);
   width: 28px;
   height: 28px;
-  fill: var(--primary-color);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 350px) {
+  .logo span {
+    display: none;
+  }
 }
 
 .nav-links {
@@ -104,7 +123,28 @@ ul {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .nav-actions {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .notification-btn {
+    display: none;
+  }
+  .nav-actions {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-actions {
+    gap: 0.4rem;
+  }
 }
 
 .icon-btn {
@@ -121,6 +161,13 @@ ul {
   color: var(--text-primary);
 }
 
+@media (max-width: 480px) {
+  .icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 .avatar {
   width: 36px;
   height: 36px;
@@ -134,6 +181,13 @@ ul {
   border-color: var(--primary-color);
 }
 
+@media (max-width: 480px) {
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -145,6 +199,12 @@ ul {
 /* Layout */
 .network-main {
   padding: 2.5rem 0;
+}
+
+@media (max-width: 480px) {
+  .network-main {
+    padding: 1.5rem 0;
+  }
 }
 
 .network-layout {
@@ -251,11 +311,32 @@ ul {
   color: white;
 }
 
+.btn-sm-profile {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  border-radius: 20px;
+}
+
 /* Feed Column */
 .feed-header h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .feed-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .feed-header h1 {
+    font-size: 1.4rem;
+  }
+  .feed-header p {
+    font-size: 0.9rem;
+  }
 }
 
 .feed-header p {
@@ -292,12 +373,27 @@ ul {
   box-shadow: 0 0 0 3px rgba(59, 202, 40, 0.1);
 }
 
+@media (max-width: 480px) {
+  .search-input {
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    font-size: 0.95rem;
+  }
+}
+
 /* Tabs */
 .tabs {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .tabs {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .tab-btn {
@@ -310,6 +406,7 @@ ul {
   cursor: pointer;
   position: relative;
   transition: color 0.2s;
+  flex-shrink: 0;
 }
 
 .tab-btn:hover {
@@ -351,6 +448,22 @@ ul {
     box-shadow 0.2s;
 }
 
+@media (max-width: 480px) {
+  .profile-card {
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .profile-card {
+    padding: 1.25rem 0.75rem;
+  }
+  .profile-info p {
+    font-size: 0.85rem;
+  }
+}
+
 .profile-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -378,18 +491,18 @@ ul {
 }
 
 .role-tag {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.7rem;
+  font-weight: 800;
   color: var(--primary-color);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
 .profile-info h2 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .profile-info p {
@@ -482,5 +595,42 @@ ul {
   }
   .profile-avatar {
     margin: 0 auto;
+    width: 80px;
+    height: 80px;
+  }
+  .profile-info h2 {
+    font-size: 1.1rem;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .nav-links .logout-trigger {
+    color: #ff4757;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+  .logo span {
+    font-size: 1.1rem;
+  }
+  .search-input {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+  }
+  .search-icon {
+    width: 18px;
+    height: 18px;
+    left: 0.75rem;
   }
 }
