@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - AgriWise</title>
+    <meta
+      name="description"
+      content="View real-time weather and market predictions"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="index.html" class="logo">
+          <i
+            class="fa-solid fa-clover"
+            style="color: var(--primary-color); font-size: 28px"
+          ></i>
+          <span>AgriWise</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="upload.html">Crops</a></li>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="network.html">Community</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn notification-btn" aria-label="Notifications">
+            <span class="notification-dot"></span>
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </button>
+          <div class="avatar-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+              alt="User Avatar"
+              class="avatar"
+            />
+          </div>
+          <a
+            href="index.html"
+            class="icon-btn"
+            aria-label="Logout"
+            title="Logout"
+            style="
+              color: var(--text-secondary);
+              margin-left: 0.5rem;
+              font-size: 1.2rem;
+            "
+          >
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+          <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Main Content -->
+    <main class="dashboard-main fade-in">
+      <div class="container">
+        <header class="dashboard-header">
+          <h1>Dashboard</h1>
+          <p>
+            Real-time weather and market price predictions to optimize your
+            farming decisions.
+          </p>
+        </header>
+
+        <div class="dashboard-grid">
+          <!-- Weather Forecast Column -->
+          <div class="column">
+            <h2 class="column-title">Weather Forecast</h2>
+
+            <!-- Today Card -->
+            <div class="dashboard-card weather-card stagger-1">
+              <div class="card-header">
+                <div class="icon-box">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="var(--primary-color)"
+                    stroke-width="2"
+                    fill="none"
+                  >
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                </div>
+                <div class="header-info">
+                  <h3>Today</h3>
+                  <p>Partly cloudy with a high of 28°C and a low of 20°C.</p>
+                  <span class="chance-rain">Chance of rain: 10%</span>
+                </div>
+              </div>
+              <div class="card-graphic graphic-today">
+                <div class="cloud"></div>
+                <div class="sun"></div>
+              </div>
+            </div>
+
+            <!-- Tomorrow Card -->
+            <div class="dashboard-card weather-card stagger-2">
+              <div class="card-header">
+                <div class="icon-box">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="var(--primary-color)"
+                    stroke-width="2"
+                    fill="none"
+                  >
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                </div>
+                <div class="header-info">
+                  <h3>Tomorrow</h3>
+                  <p>Sunny with a high of 30°C and a low of 22°C.</p>
+                  <span class="chance-rain">Chance of rain: 5%</span>
+                </div>
+              </div>
+              <div class="card-graphic graphic-tomorrow">
+                <div class="cloud cloud-small"></div>
+                <div class="sun sun-bright"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Market Price Predictions Column -->
+          <div class="column">
+            <h2 class="column-title">Market Price Predictions</h2>
+
+            <!-- Maize Card -->
+            <div class="dashboard-card market-card stagger-3">
+              <div class="card-header">
+                <div class="icon-box">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="var(--primary-color)"
+                    stroke-width="2"
+                    fill="none"
+                  >
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
+                </div>
+                <div class="header-info">
+                  <h3>Maize Price Prediction</h3>
+                  <p>
+                    Next month: <strong>$250/ton</strong> (Current: $240/ton)
+                  </p>
+                </div>
+              </div>
+              <img src="vbb].jpg" alt="Maize" class="market-img" />
+            </div>
+
+            <!-- Soybean Card -->
+            <div class="dashboard-card market-card stagger-4">
+              <div class="card-header">
+                <div class="icon-box">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="var(--primary-color)"
+                    stroke-width="2"
+                    fill="none"
+                  >
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
+                </div>
+                <div class="header-info">
+                  <h3>Soybean Price Prediction</h3>
+                  <p>
+                    Next month: <strong>$400/ton</strong> (Current: $380/ton)
+                  </p>
+                </div>
+              </div>
+              <img src="aaaaaaaa.jpg" alt="Soybean" class="market-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

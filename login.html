@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - AgriWise</title>
+    <meta name="description" content="Sign in to your AgriWise account." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="index.html" class="logo">
+          <i
+            class="fa-solid fa-clover"
+            style="color: var(--primary-color); font-size: 28px"
+          ></i>
+          <span>AgriWise</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Login Main -->
+    <main class="login-container fade-in">
+      <div class="login-box">
+        <div class="login-header">
+          <h1>Welcome to AgriWise</h1>
+          <p>Sign in to access your digital farming companion.</p>
+        </div>
+
+        <form id="loginForm" class="login-form">
+          <div class="input-group">
+            <input
+              type="email"
+              id="email"
+              class="input-field"
+              placeholder="Email address"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="password"
+              class="input-field"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Sign In
+          </button>
+        </form>
+
+        <div class="register-prompt">
+          Don't have an account?
+          <a href="register.html" class="register-link">Register now</a>
+        </div>
+      </div>
+    </main>
+
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - AgriWise</title>
+    <meta name="description" content="Create a new AgriWise account." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="index.html" class="logo">
+          <i
+            class="fa-solid fa-clover"
+            style="color: var(--primary-color); font-size: 28px"
+          ></i>
+          <span>AgriWise</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Register Main -->
+    <main class="login-container fade-in">
+      <div class="login-box">
+        <div class="login-header">
+          <h1>Join AgriWise</h1>
+          <p>Create an account to empower your farming journey.</p>
+        </div>
+
+        <form id="registerForm" class="login-form">
+          <div class="input-group">
+            <input
+              type="text"
+              id="name"
+              class="input-field"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="email"
+              id="email"
+              class="input-field"
+              placeholder="Email address"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="password"
+              class="input-field"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="confirmPassword"
+              class="input-field"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Register Now
+          </button>
+        </form>
+
+        <div class="register-prompt">
+          Already have an account?
+          <a href="login.html" class="register-link">Sign in here</a>
+        </div>
+      </div>
+    </main>
+
+    <script src="register.js"></script>
+  </body>
+</html>
