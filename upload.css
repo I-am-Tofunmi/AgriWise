@@ -346,3 +346,139 @@ ul {
     height: 48px;
   }
 }
+
+/* Results UI Styling */
+.result-header {
+  margin-bottom: 2rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.breadcrumb span {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.result-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.result-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.result-image-wrapper {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.result-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result-card {
+  background: white;
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-card .severity,
+.result-card .detected-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.result-card .severity svg {
+  color: #fbbf24; /* yellow */
+}
+
+.result-card .detected-area svg {
+  color: var(--primary-color);
+}
+
+.result-card strong {
+  color: var(--text-primary);
+}
+
+.treatments-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.treatment-item {
+  background: #ebf8e8;
+  border-radius: var(--border-radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.treatment-icon {
+  background: white;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.treatment-text h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.treatment-text p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.result-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.treated-btn {
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+}

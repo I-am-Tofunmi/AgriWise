@@ -51,4 +51,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Fetch dashboard data
+  function fetchDashboardData() {
+    // 1. Fetch Market Data
+    fetch("http://127.0.0.1:8000/market")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.length >= 2) {
+          const card1 = document.getElementById("market-card-maize");
+          if (card1) {
+            card1.querySelector("h3").textContent = data[0].crop.charAt(0).toUpperCase() + data[0].crop.slice(1) + " Price Prediction";
+            card1.querySelector("p").innerHTML = `Current: <strong>$${data[0].price}/${data[0].unit}</strong> in ${data[0].region}`;
+          }
+          const card2 = document.getElementById("market-card-soybean");
+          if (card2) {
+            card2.querySelector("h3").textContent = data[1].crop.charAt(0).toUpperCase() + data[1].crop.slice(1) + " Price Prediction";
+            card2.querySelector("p").innerHTML = `Current: <strong>$${data[1].price}/${data[1].unit}</strong> in ${data[1].region}`;
+          }
+        }
+      })
+      .catch((err) => console.error("Market fetch error:", err));
+
+    // 2. Fetch Weather Data (Using Lagos as default)
+    fetch("http://127.0.0.1:8000/weather?city=Lagos")
+      .then((res) => {
+        if (!res.ok) throw new Error("Weather API error");
+        return res.json();
+      })
+      .then((data) => {
+        const todayCard = document.getElementById("weather-today-card");
+        if (todayCard && data.main) {
+          todayCard.querySelector("h3").textContent = "Today in " + data.name;
+          const condition = data.weather[0].description;
+          const capitalizedCondition = condition.charAt(0).toUpperCase() + condition.slice(1);
+          todayCard.querySelector("p").textContent = `${capitalizedCondition}. Temp: ${data.main.temp}°C`;
+          todayCard.querySelector(".chance-rain").textContent = `Humidity: ${data.main.humidity}%`;
+        }
+      })
+      .catch((err) => console.error("Weather fetch error:", err));
+  }
+
+  fetchDashboardData();
 });

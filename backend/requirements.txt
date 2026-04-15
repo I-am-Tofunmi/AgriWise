@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pillow
+numpy
+requests
+pandas
+python-dotenv
+tensorflow
+scipy
+google-cloud-firestore
+supabase

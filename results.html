@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis Results - AgriWise</title>
+    <meta name="description" content="View the AI analysis results of your crop." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="upload.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="dashboard.html" class="logo">
+          <i
+            class="fa-solid fa-clover clover-icon"
+            style="color: var(--primary-color)"
+          ></i>
+          <span>AgriWise</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="upload.html">Analysis</a>
+        </div>
+
+        <div class="nav-actions">
+          <img src="https://i.pravatar.cc/150?img=11" alt="User Profile" class="avatar" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Results Section -->
+    <main class="upload-main fade-in">
+      <div class="container">
+        <!-- Where JS injects our beautiful dashboard mock layout -->
+        <div id="resultsArea" style="text-align: left; width: 100%; max-width: 900px; margin: 0 auto;"></div>
+      </div>
+    </main>
+
+    <script src="results.js"></script>
+  </body>
+</html>
