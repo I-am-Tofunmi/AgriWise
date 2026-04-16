@@ -142,11 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
               analyzeBtn.disabled = false;
               
               const warningHtml = `
-                <div id="cropWarning" style="position: fixed; top: 100px; left: 50%; transform: translateX(-50%); z-index: 9999; background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 20px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 500px; text-align: center; animation: fadeIn 0.3s ease-out;">
-                  <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; color: #ef4444; margin-bottom: 10px;"></i>
-                  <h3 style="margin-bottom: 8px; font-weight: 700;">Wrong Identification</h3>
-                  <p>The uploaded image does not appear to be a crop or plant. Please make sure the crop is clearly visible.</p>
-                  <button onclick="document.getElementById('cropWarning').remove()" style="margin-top: 15px; padding: 8px 16px; background: #ef4444; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Dismiss</button>
+                <div id="cropWarningOverlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); z-index: 10000; display: flex; align-items: center; justify-content: center; animation: fadeIn 0.3s ease-out;">
+                  <div id="cropWarning" style="background: white; border-radius: 32px; padding: 40px; text-align: center; width: 90%; max-width: 450px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="background: #fee2e2; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                      <i class="fa-solid fa-camera-rotate" style="font-size: 2.5rem; color: #dc2626;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">Image Not Recognized</h3>
+                    <p style="color: #6b7280; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-family: 'Inter', sans-serif;">
+                      We couldn't identify a supported crop in this image. Please ensure you upload a clear, focused photo of a plant leaf.
+                    </p>
+                    <button onclick="document.getElementById('cropWarningOverlay').remove()" style="width: 100%; padding: 18px; background: #22c55e; color: white; border: none; border-radius: 16px; cursor: pointer; font-weight: 700; font-size: 1.1rem; transition: all 0.2s; box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.4);" onmouseover="this.style.background='#16a34a'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#22c55e'; this.style.transform='translateY(0)'">
+                      Try Again
+                    </button>
+                  </div>
                 </div>
               `;
               document.body.insertAdjacentHTML("beforeend", warningHtml);
