@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       formData.append("file", selectedFile);
 
       const userId = localStorage.getItem("user_id");
-      const url = new URL("https://agriwise-backend.onrender.com/predict");
+      const url = new URL("https://agriwise-backend-7tf7.onrender.com/predict");
       if (userId) {
         url.searchParams.append("user_id", userId);
       }

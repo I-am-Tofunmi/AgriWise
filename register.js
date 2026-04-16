@@ -1,4 +1,4 @@
-const API_URL = "https://agriwise-backend.onrender.com";
+const API_URL = "https://agriwise-backend-7tf7.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
   const registerForm = document.getElementById("registerForm");
