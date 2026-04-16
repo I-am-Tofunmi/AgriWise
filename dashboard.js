@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch dashboard data
   function fetchDashboardData() {
     // 1. Fetch Market Data
-    fetch("http://127.0.0.1:8000/market")
+    fetch("https://agriwise-backend.onrender.com/market")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length >= 2) {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.error("Market fetch error:", err));
 
     // 2. Fetch Weather Data (Using Lagos as default)
-    fetch("http://127.0.0.1:8000/weather?city=Lagos")
+    fetch("https://agriwise-backend.onrender.com/weather?city=Lagos")
       .then((res) => {
         if (!res.ok) throw new Error("Weather API error");
         return res.json();

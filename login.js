@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.style.opacity = "0.7";
 
       try {
-        const response = await fetch(`http://127.0.0.1:8000/users/${email}`);
+        const response = await fetch(`https://agriwise-backend.onrender.com/users/${email}`);
         if (response.ok) {
           const userData = await response.json();
           // Assuming user exists, store details and redirect
