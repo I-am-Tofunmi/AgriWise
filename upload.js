@@ -132,9 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const data = await response.json();
           
           if (data.predictions && data.predictions.length > 0) {
-            const topClass = data.predictions[0].class || data.predictions[0].label;
+            const topPrediction = data.predictions[0];
+            const topClass = topPrediction.class || topPrediction.label;
+            const confidence = topPrediction.confidence || 0;
             
-            if (topClass.includes("Not a Crop")) {
+            // Validation: Must be a recognized crop label AND have a high enough confidence score
+            if (topClass.includes("Not a Crop") || confidence < 0.60) {
               const uploadState = document.getElementById("uploadState");
               const uploadStatus = document.getElementById("uploadStatus");
               if(uploadState) uploadState.style.display = "block";

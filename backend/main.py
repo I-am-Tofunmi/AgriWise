@@ -65,8 +65,12 @@ async def predict(file: UploadFile = File(...), user_id: Optional[str] = None):
             ]
     else:
         preds = predict_from_bytes(model, contents, labels=labels, top_k=3)
-        # Check if the model is confident enough - if not, it's likely not a crop or recognized disease
-        if preds and preds[0].get("confidence", 0) < 0.35:
+        # Stricter confidence check: If the system isn't 60% sure, it's likely not a recognized plant/disease.
+        # This prevents random objects from being identified as crops.
+        conf = preds[0].get("confidence", 0) if preds else 0
+        print(f"Top prediction: {preds[0].get('label')} with confidence: {conf}")
+        
+        if conf < 0.60:
             preds = [{"label": "Not a Crop", "confidence": 0.99}]
         
     # Save record to DB if user_id provided
