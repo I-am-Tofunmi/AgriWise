@@ -70,7 +70,7 @@ async def predict(file: UploadFile = File(...), user_id: Optional[str] = None):
         conf = preds[0].get("confidence", 0) if preds else 0
         print(f"Top prediction: {preds[0].get('label')} with confidence: {conf}")
         
-        if conf < 0.45:
+        if conf < 0.30:
             preds = [{"label": "Not a Crop", "confidence": 0.99}]
         
     # Save record to DB if user_id provided
