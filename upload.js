@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const confidence = topPrediction.confidence || 0;
             
             // Validation: Must be a recognized crop label AND have a high enough confidence score
-            if (topClass.includes("Not a Crop") || confidence < 0.60) {
+            if (topClass.includes("Not a Crop") || confidence < 0.45) {
               const uploadState = document.getElementById("uploadState");
               const uploadStatus = document.getElementById("uploadStatus");
               if(uploadState) uploadState.style.display = "block";
