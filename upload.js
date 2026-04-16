@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const data = await response.json();
           
           if (data.predictions && data.predictions.length > 0) {
-            const topClass = data.predictions[0].class;
+            const topClass = data.predictions[0].class || data.predictions[0].label;
             
             if (topClass.includes("Not a Crop")) {
               const uploadState = document.getElementById("uploadState");
