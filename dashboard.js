@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const card1 = document.getElementById("market-card-maize");
           if (card1) {
             card1.querySelector("h3").textContent = data[0].crop.charAt(0).toUpperCase() + data[0].crop.slice(1) + " Price Prediction";
-            card1.querySelector("p").innerHTML = `Current: <strong>$${data[0].price}/${data[0].unit}</strong> in ${data[0].region}`;
+            card1.querySelector("p").innerHTML = `Current: <strong>₦${data[0].price}/${data[0].unit}</strong> in ${data[0].region}`;
           }
           const card2 = document.getElementById("market-card-soybean");
           if (card2) {
             card2.querySelector("h3").textContent = data[1].crop.charAt(0).toUpperCase() + data[1].crop.slice(1) + " Price Prediction";
-            card2.querySelector("p").innerHTML = `Current: <strong>$${data[1].price}/${data[1].unit}</strong> in ${data[1].region}`;
+            card2.querySelector("p").innerHTML = `Current: <strong>₦${data[1].price}/${data[1].unit}</strong> in ${data[1].region}`;
           }
         }
       })
